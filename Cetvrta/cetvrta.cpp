@@ -1,7 +1,8 @@
 #include<iostream>
 #include<set>
 using namespace std;
-
+// remark : abscissa and ordinate coordinates are the same 2 by 2 for rectangle with sides parallel to the axes
+//  so I search for the missing coordinates :)
 int main(){
   int a,b,r1,r2;
   multiset<int> absi;
