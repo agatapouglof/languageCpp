@@ -1,0 +1,27 @@
+# boolean declaration
+bool test;
+
+# length of array tab
+(sizeof(tab)/sizeof(*tab))
+
+# struct declaration " ; at the end very important"
+struct product {
+  int weight;
+  double price;
+} ;
+
+ # split a string into a vector  by pipe
+ std::vector<std::string> tokens;
+ std::string token;
+ string s = "|:p:|.p.|:p:|.p.|:p:|.p.|:::|.p.|"; // string to split
+ std::istringstream tokenStream(s);
+ while (std::getline(tokenStream, token, '|'))
+ {
+    tokens.push_back(token);
+ }
+
+ # sort int vector
+ sort(v.begin(), v.end());
+
+ # initilize array once with many nbelements
+ int nCount[5] = {0, 1, 2, 3, 4};
