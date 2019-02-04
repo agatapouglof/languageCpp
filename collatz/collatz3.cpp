@@ -1,20 +1,21 @@
-// #include<bits/stdc++.h>
-#include "../bits/stdc++.h"
+#include<bits/stdc++.h>
+// #include "../bits/stdc++.h"
 
 using namespace std;
 
 
-long long collatz(long long x){
+int collatz(int x){
   return (x & 1) ? x = 3 * x + 1  : x >> 1;
 }
 int main(){
-  long long a,b,A,B,asteps,bsteps;
-  unordered_map<long long,long long> a_steps;
-  unordered_map<long long,long long> b_steps;
-  unordered_map<long long,long long> syracuse;
-  unordered_map<long long, long long> mp;
+  int a,b,A,B,asteps,bsteps;
+  unordered_map<int,int> a_steps;
+  unordered_map<int,int> b_steps;
+  unordered_map<int,int> syracuse;
+  unordered_map<int, int> mp;
   unordered_set<int> steps;
   mp[2] = 1;
+  int met;
 
   while(true){
     cin >> a >> b;
@@ -22,46 +23,52 @@ int main(){
     A = a; B = b;
     asteps = 0;
     bsteps = 0;
-    a_steps[a] = asteps;
-    b_steps[b] = bsteps;
-
+    a_steps[a] = 0;
+    b_steps[b] = 0;
+    // cout << "a : " << a <<" steps : "<< asteps <<endl;
+    // cout << "b : " << b <<" steps : "<< bsteps <<endl;
     while (true) {
-      if(a_steps.count(b) || b_steps.count(a)) break;
+
+      if(b_steps.find(a) != b_steps.end()) {  met=a;  break;}
+      if(a_steps.find(b) != a_steps.end()) { met=b; break;}
+
         // steps.insert(a);
         // steps.insert(b);
-        if(mp[a] && a!=1) a = mp[a];
-        else{
-          mp[a] = collatz(a);
+        if(mp.find(a) != mp.end() && a!=1){
           a = mp[a];
         }
-        if(a!=1) {asteps++; a_steps[a] = asteps;}
-        if(mp[b] && b!=1) b = mp[b];
         else{
-          mp[b] = collatz(b);
+          if(a_steps.find(1) == a_steps.end()) {
+            mp[a] = collatz(a);
+            a = mp[a];
+          }
+        }
+        if(a_steps.find(1) == a_steps.end()) {asteps++; a_steps[a] = asteps;}
+        if(b_steps.find(a) != b_steps.end()) {  met=a;  break;}
+
+        if(mp.find(b) != mp.end() && b!=1){
           b = mp[b];
         }
-        if(b!=1) {bsteps++; b_steps[b] = bsteps;}
+        else{
+          if(b_steps.find(1) == b_steps.end()) {
+            mp[b] = collatz(b);
+            b = mp[b];
+          }
+        }
+        if(b_steps.find(1) == b_steps.end()) {bsteps++; b_steps[b] = bsteps;}
+        if(a_steps.find(b) != a_steps.end()) { met=b; break;}
 
+        // cout << "a : " << a <<" steps : "<< asteps <<endl;
+        // cout << "b : " << b <<" steps : "<< bsteps <<endl;
     }
-    // while(a != 1 && !mp[a]){
-    //   if(a!=1)
-    //   j++;
-    //   mp[a] = collatz(a);
-    //   a = mp[a];
-    //   a_steps[a] = j;
-    // }
-    // while(!a_steps[b]){
-    //   b = collatz(b);
-    //   bsteps++;
-    // }
-   int mini = asteps;
-   if(bsteps < mini) mini = bsteps;
-   cout << A <<" needs "<<a_steps[mini]<<" steps, "<<B<<" needs "<<b_steps[mini]<<" steps, they meet at "<< mini <<endl;
-
-   // a_steps.clear();
+   // int mini = asteps;
+   // if(bsteps < mini) mini = bsteps;
+   cout << A <<" needs "<<a_steps[met]<<" steps, "<<B<<" needs "<<b_steps[met]<<" steps, they meet at "<< met <<endl;
+   a_steps.clear();
+   b_steps.clear();
    asteps=0;
    bsteps=0;
-   steps.clear();
+   // steps.clear();
    // for (auto x:mp ) {
    //   cout << x.first << "  " ;
    //   cout << x.second << endl;
