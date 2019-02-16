@@ -25,3 +25,21 @@ struct product {
 
  # initilize array once with many nbelements
  int nCount[5] = {0, 1, 2, 3, 4};
+
+ # Read a getline
+ getline(cin,input);
+
+ # convert string to int using stringstream
+  string mystr ("1204");
+  int myint;
+  stringstream(mystr) >> myint
+
+# Compare Two strings
+  str1.compare(str2) == 0 // if the two are equals
+
+# Pass over the \n when you want to read a string with getline after a int
+ cin.ignore();
+
+# Fix number of digit afer . eg x.iiii
+  cout << fixed;
+  cout.precision(4) // to have 4 digits after une dot (.)
