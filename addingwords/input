@@ -1,0 +1,15 @@
+def foo 3
+def dan -1
+def bar 7
+calc foo + bar =
+clear
+def res 7
+def programming 10
+calc foo + bar =
+def is 4
+def fun 8
+def all 14
+calc programming - is + fun =
+def fun 1
+calc programming - is + fun =
+clear

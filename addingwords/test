@@ -1,0 +1,4 @@
+calc foo + bar = unknown
+calc foo + bar = programming
+calc programming - is + fun = unknown
+calc programming - is + fun = bar

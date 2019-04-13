@@ -42,4 +42,7 @@ struct product {
 
 # Fix number of digit afer . eg x.iiii
   cout << fixed;
-  cout.precision(4) // to have 4 digits after une dot (.)
+  cout.precision(4) // to have 4 digits after the dot (.)
+
+#initilize map
+  map<int , char> = { {1,'a'}, {4,'h'}, {5, '1'} };

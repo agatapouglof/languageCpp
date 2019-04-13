@@ -1,0 +1,17 @@
+def me 3
+def is 2
+def is -3
+def cool 5
+calc nerv =
+def nerv -1
+calc nerv =
+calc dan =
+def nerv -1
+calc nerv =
+calc nerv + me =
+def me 3
+def is 2
+calc me + is + nerv - nerv =
+calc foo + bar - foo + me =
+calc me - me - me =
+clear
