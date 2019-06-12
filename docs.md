@@ -46,3 +46,17 @@ struct product {
 
 #initilize map
   map<int , char> = { {1,'a'}, {4,'h'}, {5, '1'} };
+
+#convert char to int
+// a Char is an integer  interpreted through ASCII table 0 ==> 48 and 1 ==> 49
+  char a = '6';
+  int b = a-48; // b as integer == 6
+
+# Convert int to string
+  text = to_string(number);
+  or
+  stringstream sss;
+  sss << number;
+  input_text = sss.str();
+
+#  

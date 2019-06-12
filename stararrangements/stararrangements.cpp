@@ -3,39 +3,25 @@
 using namespace std;
 
 int main(){
-  int S,x,y;
+  int S,x,y,res;
   cin >> S;
-  cout << S << ":" << endl;
-  for(int i=2; i< S ; i++){
-    x = 2;
-    while(true){
-      if(x > S ) break;
-      if(x * i +x *(i-1) == S){
-        cout << i <<"," << i-1 << endl;
-        // break;
-      }
-      if(x * i +(x-1) *(i-1) == S){
-
-        cout << i <<"," << i-1 << endl;
-        // break;
-      }
-      if((x * i + x * i ) == S){
-        cout << i <<"," << i << endl;
-        // break;
-      }
-      if(x * i +(x-1) *(i) ==S){
-        cout << i <<"," << i << endl;
-        // break;
-      }
-      x++;
+  cout << S <<":"<<endl;
+  for (int i = 2; i < S/2+2; i++) {
+    x = i ;
+    y = x - 1;
+    res = x + y;
+    while(res < S){
+      res += x ;
+      if(res == S) break;
+      res += y;
+      if(res == S) break;
     }
-    // x = S / i ;
-    // y = S % (i-1);
-    // if(y == 0 ) cout << i <<","<< i-1 <<endl;
-    // y = S % (i);
-    // if(y == 0 ) cout << i <<","<< i <<endl;
-    // cout << "x : " << x << endl;
-    // cout << "y : " << y << endl;
+    if(res ==  S){
+      cout << x << "," << y << endl;
+    }
+
+    if(S%i == 0) cout << i <<"," << i <<endl;
   }
   return 0;
 }
+// Before Score: 230.0Rank: 1402
