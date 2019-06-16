@@ -59,4 +59,7 @@ struct product {
   sss << number;
   input_text = sss.str();
 
-#  
+# Find if subsring is in string
+    if(str.find(substr) != string::npos)
+    str.find ==> return the position of first occurence else return string::npos
+    string::npos ==> end of string
