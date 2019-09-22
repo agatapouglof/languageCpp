@@ -63,3 +63,8 @@ struct product {
     if(str.find(substr) != string::npos)
     str.find ==> return the position of first occurence else return string::npos
     string::npos ==> end of string
+
+# fix getline after cin
+  make a dummy getline before the real getline
+  getline(cin, dummy);
+  getline(cin, text);
