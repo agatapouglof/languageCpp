@@ -14,7 +14,7 @@ struct product {
  std::vector<std::string> tokens;
  std::string token;
  string s = "|:p:|.p.|:p:|.p.|:p:|.p.|:::|.p.|"; // string to split
- std::istringstream tokenStream(s);
+ std::istringstream tokenStream  (s);
  while (std::getline(tokenStream, token, '|'))
  {
     tokens.push_back(token);
@@ -23,7 +23,7 @@ struct product {
  # sort int vector
  sort(v.begin(), v.end());
 
- # initilize array once with many nbelements
+ # initilize array once with many elements
  int nCount[5] = {0, 1, 2, 3, 4};
 
  # Read a getline
@@ -68,3 +68,10 @@ struct product {
   make a dummy getline before the real getline
   getline(cin, dummy);
   getline(cin, text);
+
+# convert char to int
+  ref :: http://www.cplusplus.com/forum/beginner/68260/
+ you can use the ASCII codes. A char is actually just a number interpreted through the ASCII table. By looking at the table, you can find that '0' is 48, '1' 49 and so on until '9' as 57. As a result, you can do this:
+  char a = '6';
+  int b = a-48;
+
