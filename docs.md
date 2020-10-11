@@ -75,3 +75,9 @@ struct product {
   char a = '6';
   int b = a-48;
 
+# convert full string to lowercase
+string text;
+         std::for_each(text.begin(), text.end(), [](char & c) {
+            c = ::tolower(c);
+        });
+
