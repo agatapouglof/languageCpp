@@ -80,4 +80,9 @@ string text;
          std::for_each(text.begin(), text.end(), [](char & c) {
             c = ::tolower(c);
         });
+# read input until the end of file of invalid input type
+string input;
+while(cin >> input){
+  
+}
 
