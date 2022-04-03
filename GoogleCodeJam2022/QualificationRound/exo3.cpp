@@ -28,41 +28,30 @@ const ld  prec = .000001;
 #define umap unordered_map
 #define uset unordered_set
 
-
 int main(){
-    list<char> mylist;
-    list<char>::iterator it = mylist.end();
-    
-    string text;
-    cin >> text;
-    
-    for (size_t i = 0; i < text.length(); i++){
-        char currentChar = text[i];
-        if(currentChar == 'L'){
-            if(it != mylist.begin()){
-                --it;
+    int n,d,maxi,tmp;
+    cin >> n;
+    rep(i,n){
+        cin >> d;
+        maxi = 0;
+        vector<int> vect;
+        rep(j,d){
+            cin >> tmp;
+            vect.push_back(tmp);
+        }
+        sort(vect.begin(), vect.end());
+        int res = 0;
+        int idx = 1;
+        rep(j,d){
+            if(vect[j] >= idx ) {
+                res++;
+                idx++;
             }
         }
-        else if(currentChar == 'R'){
-            if(it != mylist.end()){
-                ++it;
-            }
-        } 
-        else if(currentChar == 'B'){
-            if(it != mylist.begin()){
-                --it;
-                it = mylist.erase(it); // erase it element and return pointer to next element
-            }
+        cout << "Case #" << i+1 << ": ";
+        cout << res << endl;
 
-        }else{
-            mylist.insert(it,currentChar); // insert before it and keep it pointer in the same position
-        }
     }
-    list<char>::iterator at;
-    for(at=mylist.begin(); at != mylist.end(); ++at){
-        cout << *at;
-    }
-
     
     return 0;
 }
